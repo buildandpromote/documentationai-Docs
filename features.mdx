@@ -1,0 +1,116 @@
+---
+title: Features
+description: Detailed overview of features, use cases, and capabilities for managing digital assets.
+---
+
+## Overview
+
+Untapped Asset empowers you to discover and manage overlooked digital assets like domains, websites, and newsletters. Start with fixed-price domain offers in our private beta, then expand to browsing opportunities and seamless negotiations. You maintain full control over your assets while connecting with interested buyers.
+
+<Columns cols={2}>
+  <Card title="Fixed-Price Offers" icon="tag" href="#fixed-price">
+    List domains at your price and approve all deals.
+  </Card>
+  <Card title="Asset Types" icon="layers" href="#asset-types">
+    Support for domains, sites, audiences, and more.
+  </Card>
+  <Card title="Browse Opportunities" icon="search" href="#browsing">
+    Find undervalued assets ready for acquisition.
+  </Card>
+  <Card title="Negotiation Tools" icon="message-circle" href="#negotiation">
+    Secure contact and deal-making features.
+  </Card>
+</Columns>
+
+## Fixed-Price Domain Offers
+
+Launch your domains into the marketplace with fixed-price listings. Set your terms, display details, and wait for buyer interest. Nothing transfers without your explicit approval.
+
+<Callout kind="info">
+  Currently in private beta for domains. Websites and other assets coming soon.
+</Callout>
+
+<Steps>
+  <Step title="List Your Domain" icon="plus">
+    Navigate to your dashboard at `https://dashboard.example.com/assets`.
+    
+    Click "Add Asset" and select "Domain".
+  </Step>
+  <Step title="Set Price and Terms" icon="dollar-sign">
+    Enter your domain name, fixed price, and any conditions like transfer method.
+  </Step>
+  <Step title="Publish" icon="eye">
+    Review and publish. Your listing appears to verified buyers immediately.
+  </Step>
+</Steps>
+
+## Supported Asset Types
+
+Expand beyond domains to a growing list of digital assets. Each type includes tailored listing templates.
+
+<Tabs>
+  <Tab title="Domains" icon="globe">
+    Primary beta focus. List `.com`, `.io`, and more with WHOIS details and appraisal links.
+  </Tab>
+  <Tab title="Websites" icon="layout">
+    Full sites with traffic stats, revenue data, and tech stack info.
+  </Tab>
+  <Tab title="Newsletters" icon="mail">
+    Subscriber lists, open rates, and content archives.
+  </Tab>
+  <Tab title="Audiences" icon="users">
+    Social followers, email lists, or community metrics.
+  </Tab>
+</Tabs>
+
+## Browsing Opportunities
+
+Scan available assets matching your interests. Filter by type, price range, and keywords to uncover hidden value.
+
+<Board title="Current Opportunities">
+  <BoardColumn title="New Listings" color="0" icon="plus-circle">
+    <BoardCard title="example.io domain" description="Premium 2-word .io available at fixed price" icon="globe" dueDate="2024-12-31" />
+    <BoardCard title="TechNews Newsletter" description="10k subs, 40% open rate" icon="mail" />
+  </BoardColumn>
+  <BoardColumn title="Hot Deals" color="2" icon="flame">
+    <BoardCard title="BlogSite.com" description="Monetized site with 5k monthly visitors" icon="trending-up" author="Seller A" />
+  </BoardColumn>
+  <BoardColumn title="Ending Soon" color="3" icon="clock">
+    <BoardCard title="CreativeIP Portfolio" description="Stock photos and designs library" icon="image" dueDate="2024-12-15" />
+  </BoardColumn>
+</Board>
+
+## Contact and Negotiation Tools
+
+Initiate secure conversations with asset owners. Propose counters, share NDAs, and close deals efficiently.
+
+<Steps>
+  <Step title="Express Interest" icon="heart">
+    Click "Make Offer" on any listing.
+  </Step>
+  <Step title="Negotiate" icon="message-circle">
+    Send messages with your proposal. Owners respond via encrypted channel.
+  </Step>
+  <Step title="Finalize" icon="check-circle">
+    Agree on terms, sign escrow agreement, and transfer assets.
+  </Step>
+</Steps>
+
+<Expandable title="Advanced Negotiation Tips" default-open="false">
+  Use our built-in templates for LOIs and counteroffers. Integrate with `https://api.example.com/v1/negotiations` for programmatic updates:
+  
+  ````javascript
+  const response = await fetch('https://api.example.com/v1/negotiations', {
+    method: 'POST',
+    headers: { 'Authorization': `Bearer ${YOUR_TOKEN}` },
+    body: JSON.stringify({
+      assetId: 'domain-123',
+      offer: { price: 5000, terms: 'Escrow via Escrow.com' }
+    })
+  });
+  ````
+</Expandable>
+
+<Callout kind="tip">
+  Customize these features to fit your workflow. This starter kit provides a foundation—edit content to match your exact capabilities.
+</Callout>

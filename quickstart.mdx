@@ -1,0 +1,138 @@
+---
+title: Quickstart
+description: Guide to quickly join the private beta, set up your account, and explore the dashboard.
+---
+
+## Prerequisites
+
+<Callout kind="info">
+
+Untapped Asset is currently in private beta. You need an invitation to access the dashboard. Ensure you have a valid email address and own digital assets like domains ready to list.
+
+</Callout>
+
+## Register Interest
+
+Start by registering your interest to receive an invitation.
+
+<Steps>
+  <Step title="Visit the Registration Page" icon="external-link">
+    Go to the [interest form](https://untappedasset.com/#interest) on the Untapped Asset homepage.
+  </Step>
+  <Step title="Fill Out the Form">
+    Provide your name, email, and details about your assets (domains, websites, etc.).
+    
+    ```
+    Name: Your Full Name
+    Email: your.email@example.com
+    Assets: example.com, myblog.net
+    ```
+  </Step>
+  <Step title="Submit and Wait">
+    Submit the form. You will receive a confirmation email. Invitations are sent on a rolling basis.
+  </Step>
+</Steps>
+
+## Invitation and Account Creation
+
+Once invited, create your account.
+
+<Steps>
+  <Step title="Check Your Email" icon="mail">
+    Look for an invitation email from Untapped Asset containing a unique link.
+  </Step>
+  <Step title="Click the Invitation Link">
+    Open the link to start account creation. It directs to `https://app.untappedasset.com/invite`.
+  </Step>
+  <Step title="Set Password">
+    Enter a strong password and complete any verification steps, such as email confirmation.
+  </Step>
+</Steps>
+
+## Login to the Dashboard
+
+Access your dashboard securely.
+
+<Tabs>
+  <Tab title="Web Browser" icon="globe">
+    Navigate to `https://app.untappedasset.com/login` and enter your credentials.
+  </Tab>
+  <Tab title="Magic Link" icon="link">
+    Request a magic link via email for passwordless login.
+    
+    ```
+    Click "Send Magic Link" on the login page.
+    ```
+  </Tab>
+</Tabs>
+
+<Callout kind="tip">
+  Enable two-factor authentication (2FA) immediately after first login for added security.
+</Callout>
+
+## Dashboard Walkthrough
+
+The dashboard provides an overview of your assets and opportunities.
+
+<Columns cols={3}>
+  <Card title="Your Assets" icon="database" href="/assets">
+    View and manage domains, websites, and other digital assets.
+  </Card>
+  <Card title="Offers" icon="shopping-bag" href="/offers">
+    Review incoming offers and set your terms.
+  </Card>
+  <Card title="Analytics" icon="bar-chart-3" href="/analytics">
+    Track views, inquiries, and asset performance.
+  </Card>
+</Columns>
+
+Explore your asset status with the built-in board:
+
+<Board title="Asset Pipeline">
+  <BoardColumn title="Draft" icon="edit-3">
+    <BoardCard title="example.com" description="Premium domain ready for listing" />
+    <BoardCard title="myblog.net" description="Established website with traffic" />
+  </BoardColumn>
+  <BoardColumn title="Listed" color="1" icon="eye">
+    <BoardCard title="untapped.io" description="Awaiting offers" dueDate="2024-12-31" author="You" />
+  </BoardColumn>
+  <BoardColumn title="Offers Received" color="2" icon="shopping-cart">
+    <BoardCard title="assetvalue.com" description="3 offers pending review" createdAt="2024-11-15" />
+  </BoardColumn>
+</Board>
+
+## Next Steps
+
+<Expandable title="Troubleshooting Common Issues" default-open="false">
+  
+| Issue | Solution |
+|-------|----------|
+| No invitation email | Check spam folder and resubmit interest form. |
+| Login fails | Reset password via `https://app.untappedasset.com/forgot-password`. |
+| Asset not visible | Verify ownership via DNS records as prompted. |
+
+</Expandable>
+
+Now list your first asset:
+
+<CodeGroup tabs="CLI,Web">
+  ```bash
+  untapped-asset login --email your.email@example.com
+  untapped-asset asset add example.com --type domain --price 1000
+  ```
+  ```javascript
+  // Using the JS SDK (coming soon)
+  import { UntappedAsset } from 'untapped-asset-sdk';
+  
+  const client = new UntappedAsset({ apiKey: 'YOUR_API_KEY' });
+  await client.assets.create({
+    name: 'example.com',
+    type: 'domain',
+    price: 1000
+  });
+  ```
+</CodeGroup>
+
+<Callout kind="success">
+  Congratulations! You're ready to discover value in your untapped assets. Explore the dashboard and list your first domain.
+</Callout>

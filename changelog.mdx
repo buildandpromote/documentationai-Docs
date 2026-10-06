@@ -1,0 +1,119 @@
+---
+title: Changelog
+description: Version history with recent updates, new features, and changes to Untapped Asset.
+---
+
+## Recent Updates
+
+<Callout kind="info">
+  Check the [dashboard](https://dashboard.example.com) for your current version. Updates deploy automatically for most users.
+</Callout>
+
+<Update label="2024-12-15" description="v1.2.0" tags={["feature", "improvement"]}>
+## New Features
+
+- Added support for listing websites alongside domains.
+- Introduced fixed-price offer notifications via email and dashboard alerts.
+- New API endpoint for querying asset availability: `GET /api/v1/assets/search`.
+
+## Improvements
+
+- Enhanced search filters for digital brands and content libraries.
+- Improved performance of asset discovery scans by `>30%`.
+
+</Update>
+
+<Update label="2024-12-01" description="v1.1.0" tags={["feature", "bugfix"]}>
+## New Features
+
+- Owner controls now include custom terms for asset offers.
+- Beta access for newsletters and audience lists.
+
+## Bug Fixes
+
+- Fixed issue with domain validation failing on certain TLDs.
+- Resolved dashboard refresh errors during active scans.
+
+</Update>
+
+<Update label="2024-11-15" description="v1.0.0" tags={["breaking", "feature"]}>
+## New Features
+
+- Initial release with core domain listing and matching.
+- Dashboard for owners to review and approve offers.
+- API integration for programmatic asset management.
+
+## Breaking Changes
+
+- Updated authentication to require `{API_KEY}` in headers only.
+
+</Update>
+
+## Upgrade Process
+
+Follow these steps to ensure your integration uses the latest version.
+
+<Steps>
+  <Step title="Check Current Version" icon="check-circle">
+    Query your version endpoint:
+
+````javascript
+fetch('https://api.example.com/v1/version')
+  .then(res => res.json())
+  .then(data => console.log(data.version));
+````
+
+  </Step>
+  <Step title="Review Changes" icon="book-open">
+    Scan release notes above for breaking changes.
+  </Step>
+  <Step title="Update SDK" icon="download">
+<Tabs>
+      <Tab title="npm" icon="package">
+````bash
+npm update untapped-asset-sdk
+````
+      </Tab>
+      <Tab title="Python" icon="python">
+````bash
+pip install --upgrade untapped-asset
+````
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step title="Test Integration" icon="zap">
+    Verify asset listings with a test scan.
+  </Step>
+</Steps>
+
+## Roadmap
+
+Track upcoming enhancements for Untapped Asset.
+
+<Board title="Q1 2025 Roadmap">
+  <BoardColumn title="Planned" color="0" icon="calendar">
+    <BoardCard title="Audience matching" description="Connect owners with buyers for email lists" icon="users" dueDate="2025-02-15" />
+    <BoardCard title="Creative IP marketplace" description="List and sell digital designs" icon="image" />
+  </BoardColumn>
+  <BoardColumn title="In Progress" color="1" icon="loader-2">
+    <BoardCard title="Webhook support" description="Real-time notifications for offers" icon="zap" author="Engineering" />
+  </BoardColumn>
+  <BoardColumn title="Completed" color="2" icon="check-circle">
+    <BoardCard title="Website listings" description="Expand beyond domains" icon="globe" createdAt="2024-12-15" />
+  </BoardColumn>
+</Board>
+
+## Explore More
+
+<Columns cols={2}>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Get started with asset discovery in minutes.
+  </Card>
+  <Card title="API Reference" icon="code" href="/authentication">
+    Full API documentation and examples.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Found an issue? [Register interest](https://untappedasset.com/#interest) or check our [support docs](/introduction).
+</Callout>
